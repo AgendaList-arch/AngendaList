@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About us - AgendaList</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background-color: #9DBACC;
+    }
+    
+    .navbar {
+      background-color: #37607CF2;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+    }
+    
+    .navbar ul li {
+      display: inline;
+      margin: 0 1%;
+    }
+    
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: none;
+      background: transparent;
+    }
+    
+    .navbar ul li a:hover {
+      transition: 750ms;
+      color: slategrey;
+    }
+    
+    .webname {
+      color: white;
+      font-size: 16px;
+      letter-spacing: 2px;
+      background: transparent;
+      color: cornflowerblue;
+    }
+    
+    button {
+      border: transparent;
+    }
+    
+    .navbar ul li .about {
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      height: 20px;
+      width: 80px;
+      background-color: steelblue;
+      color: darkslategrey;
+      border-radius: 5px;
+      font-family: 'Comfortaa', sans-serif;
+    }
+    
+    .navbar ul li .about:hover {
+      transition: 750ms;
+      background-color: darkslategrey;
+      color: steelblue;
+    }
+    
+    .navbar ul li .about:active {
+      transition: 100ms;
+      background-color: steelblue;
+      color: darkslategrey;
+    }
+    
+    main {
+      padding: 80px 20px;
+    }
+    
+    .container { 
+      max-width: 800px;
+      margin: auto;
+    }
+    
+    h1 {
+      color: #3a86ff;
+    }
+    
+    main p {
+      letter-spacing: 2px;
+      padding: 20px 0;
+    }
+    
+    .container .paras {
+      background-color: slategrey;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 20px;
+      width: 100%;
+    }
+    
+    main strong {
+      font-family: "Poppins", sans-serif;
+    }
+    
+    .privacy-policy {
+      padding: 20px;
+      border-radius: 20px;
+      background-color: slategrey;
+      width: 100%;
+    }
+    
+    .privacy-policy a {
+      text-decoration: none;
+      color: white;
+    }
+    
+    .privacy-policy a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li class="webname">Agenda<sub>List</sub></li>
+        <li><a href="index.html">Home</a></li>
+        <li><button class="about">About Us</button></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="container">
+      <h1>About AgendaList</h1>
+      <div class="paras">
+        <p><strong>AgendaList</strong> is a simple and intuitive to-do list web app designed to help you stay organized effortlessly. Whether you're planning your day, managing tasks, or keeping track of goals, AgendaList is here to make it easier.</p>
+  
+        <p>Created with a focus on speed and simplicity, your tasks are securely stored in your browser's local storage — no sign-up required. Just open the app and start managing your day!</p>
+    
+        <p>We're passionate about making productivity tools that are fast, lightweight, and user-friendly.</p>
+    
+        <p>Thanks for choosing AgendaList!</p>
+      </div>
+      
+      <div class="privacy-policy">
+        <p>Our privacy policy at: <a href="Privacy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - AgendaList</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background-color: #9DBACC;
+    }
+    
+    .navbar {
+      background-color: #37607CF2;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+    }
+    
+    .navbar ul li {
+      display: inline;
+      margin: 0 1%;
+    }
+    
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: none;
+      background: transparent;
+    }
+    
+    .navbar ul li a:hover {
+      transition: 750ms;
+      color: slategrey;
+    }
+    
+    .webname {
+      color: white;
+      font-size: 16px;
+      letter-spacing: 2px;
+      background: transparent;
+      color: cornflowerblue;
+    }
+    
+    button {
+      border: transparent;
+    }
+    
+    .navbar ul li .contact {
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      height: 20px;
+      width: 90px;
+      background-color: steelblue;
+      color: darkslategrey;
+      border-radius: 5px;
+      font-family: 'Comfortaa', sans-serif;
+    }
+    
+    .navbar ul li .contact:hover {
+      transition: 750ms;
+      background-color: darkslategrey;
+      color: steelblue;
+    }
+    
+    .navbar ul li .contact:active {
+      transition: 100ms;
+      background-color: steelblue;
+      color: darkslategrey;
+    }
+    
+    main {
+      padding: 80px 20px;
+    }
+    
+    h1 {
+      color: #3a86ff;
+    }
+    
+    form textarea {
+      resize: none;
+    }
+    
+    form input::placeholder, textarea::placeholder {
+      color: paleturquoise;
+    }
+    
+    form input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: slategrey;
+      color: paleturquoise;
+    }
+    
+    form button {
+      padding: 10px 20px;
+      background: #3a86ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    
+    form button:hover {
+      transition: 700ms;
+      background: #2b66cc;
+    }
+    
+    .container p {
+      letter-spacing: 2px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li class="webname">Agenda<sub>List</sub></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><button class="contact">Contact Us</button></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>If you have any questions, suggestions, or feedback, feel free to reach out using the form below:</p>
+  
+      <form action="mailto:agendalist18@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="email" name="Email" placeholder="Your Email" required />
+        <textarea name="Message" rows="6" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

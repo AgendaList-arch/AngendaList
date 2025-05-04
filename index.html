@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgendaList - To-do list</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background-color: #9DBACC;
+    }
+    
+    .navbar {
+      background-color: #37607CF2;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+    }
+    
+    .navbar ul li {
+      display: inline;
+      margin: 0 1%;
+    }
+    
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: none;
+      background: transparent;
+    }
+    
+    .navbar ul li a:hover {
+      transition: 750ms;
+      color: slategrey;
+    }
+    
+    .webname {
+      color: white;
+      font-size: 16px;
+      letter-spacing: 2px;
+      background: transparent;
+      color: cornflowerblue;
+    }
+    
+    button {
+      border: transparent;
+    }
+    
+    .navbar ul li .home {
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      height: 20px;
+      width: 50px;
+      background-color: steelblue;
+      color: darkslategrey;
+      border-radius: 5px;
+      font-family: 'Comfortaa', sans-serif;
+    }
+    
+    .navbar ul li .home:hover {
+      transition: 750ms;
+      background-color: darkslategrey;
+      color: steelblue;
+    }
+    
+    .navbar ul li .home:active {
+      transition: 100ms;
+      background-color: steelblue;
+      color: darkslategrey;
+    }
+    
+    main {
+      height: 100vh;
+      padding: 80px 20px;
+    }
+    
+    main h1 {
+      width: 100%;
+    }
+    
+    main .search {
+      margin: 30px 0;
+    }
+    
+    main .search input {
+      border: transparent;
+      border-radius: 100px;
+      height: 40px;
+      width: 100%;
+      padding: 0 20px;
+      color: paleturquoise;
+      background-color: slategrey;
+      letter-spacing: 2px;
+      transition: 1s;
+    }
+    
+    main .search input:active {
+      transition: 100ms;
+      border: transparent;
+      background: transparent;
+    }
+    
+    main .search input::placeholder {
+      color: paleturquoise;
+    }
+    
+    main .to-dos {
+      height: 60%;
+      width: 100%;
+      border-radius: 20px;
+      background-color: slategrey;
+      padding: 0 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      white-space: pre-line;
+      line-height: 1.6;
+    }
+    
+    main .to-dos::-webkit-scrollbar {
+      display: none;
+    }
+    
+    main .add-to-dos {
+      width: 100%;
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    main .add-to-dos img {
+      border: transparent;
+      border-radius: 100%;
+      transition: 1s;
+    }
+    
+    main .add-to-dos img:active {
+      transition: 70ms;
+      width: 8.8%;
+    }
+    
+    footer {
+      transition: 1s;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      background-color: #000000A3;
+      visibility: hidden;
+      opacity: 0;
+    }
+    
+    footer .container {
+      transition: 1s;
+      width: 100%;
+      background-color: #68859F;
+      padding: 20px;
+      position: relative;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      visibility: hidden;
+      opacity: 0;
+    }
+    
+    .todo-title-container input {
+      transition: 1s;
+      width: 100%;
+      height: 23.3px;
+      border: transparent;
+      border-radius: 20px;
+      padding: 0 20px;
+      background-color: slategrey;
+      color: paleturquoise;
+    }
+    
+    .todo-title-container input::placeholder {
+      color: paleturquoise;
+    }
+    
+    .todo-title-container input:active {
+      transition: 100ms;
+      border: transparent;
+      background: transparent;
+    }
+    
+    .todo-content-container textarea {
+      transition: 1s;
+      margin: 10px 0;
+      width: 100%;
+      height: 30px;
+      border: transparent;
+      border-radius: 10px;
+      padding: 0 20px;
+      background-color: slategrey;
+      color: paleturquoise;
+      resize: none;
+      
+    }
+    
+    .todo-content-container textarea::placeholder {
+      color: paleturquoise;
+    }
+    
+    .todo-content-container textarea:active {
+      transition: 100ms;
+      border: transparent;
+      background: transparent;
+    }
+    
+    .saveCancel-todo-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .saveCancel-todo-container .cancel-todo-btn {
+      transition: 1s;
+      width: 25%;
+      height: 14px;
+      border-radius: 20px;
+      background-color: slategrey;
+    }
+    
+    .saveCancel-todo-container .cancel-todo-btn:active {
+      transition: 50ms;
+      background-color: transparent;
+    }
+
+    .saveCancel-todo-container .save-todo-btn {
+      transition: 1s;
+      width: 25%;
+      height: 14px;
+      border-radius: 20px;
+      background-color: slategrey;
+    }
+    
+    .saveCancel-todo-container .save-todo-btn:active {
+      transition: 50ms;
+      background-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li class="webname">Agenda<sub>List</sub></li>
+        <li><button class="home">Home</button></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>To-dos</h1>
+    
+    <div class="search">
+      <input type="text" placeholder="Search to-dos" />
+    </div>
+    
+    <div class="to-dos"></div>
+    
+    <div class="add-to-dos">
+      <img class="add-icon" src="https://i.pinimg.com/736x/8f/fd/38/8ffd38358a69e6630f8466d7063fd1c2.jpg" alt="Add-to-dos" width="10%" height="auto" onclick="addTodoItem()" />
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="todo-title-container">
+        <input type="text" id="todo-title" placeholder="Title" />
+      </div>
+      
+      <div class="todo-content-container">
+        <textarea id="todo-content" placeholder="Add a todo item" ></textarea>
+      </div>
+      
+      <div class="saveCancel-todo-container">
+        <button class="cancel-todo-btn" onclick="cancel()">Cancel</button>
+        <button class="save-todo-btn">Save</button>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+    let editIndex = null;
+  
+    const titleInput = document.getElementById("todo-title");
+    const contentInput = document.getElementById("todo-content");
+    const cancelButton = document.querySelector(".cancel-todo-btn");
+    const saveButton = document.querySelector(".save-todo-btn");
+    const todosContainer = document.querySelector(".to-dos");
+    const footer = document.querySelector("footer");
+    const container = document.querySelector(".container");
+
+    function addTodoItem() {
+      footer.style.visibility = "visible"
+      container.style.visibility = "visible"
+      footer.style.opacity = "1"
+      container.style.opacity = "1"
+      footer.style.height = "100vh"
+      container.style.height = "61.1%"
+      footer.style.top = "0"
+      container.style.top = "70%"
+      titleInput.style.height = "30px"
+      contentInput.style.height = "60px"
+      cancelButton.style.height = "30px"
+      saveButton.style.height = "30px"
+      contentInput.style.padding = "10px 20px"
+    }
+
+    function cancel() {
+      footer.style.visibility = "hidden"
+      container.style.visibility = "hidden"
+      footer.style.opacity = "0"
+      container.style.opacity = "0"
+      footer.style.top = "100%"
+      container.style.top = "0"
+      container.style.height = "100%"
+      footer.style.height = "16vh"
+      titleInput.value = "";
+      contentInput.value = "";
+      editIndex = null;
+      contentInput.style.height = "30px"
+      titleInput.style.height = "23.3px"
+      cancelButton.style.height = "14px"
+      saveButton.style.height = "14px"
+      contentInput.style.padding = "0 20px"
+    }
+    
+    function renderTodos() {
+      todosContainer.innerHTML = "";
+    
+      todos.forEach((todo, index) => {
+        const todoDiv = document.createElement("div");
+        todoDiv.className = "todo";
+        todoDiv.style.margin = "20px 0";
+        todoDiv.style.backgroundColor = todo.completed ? "lightslategrey" : "darkslategrey";
+        todoDiv.style.padding = "15px";
+        todoDiv.style.borderRadius = "20px";
+        todoDiv.style.color = "paleturquoise";
+        todoDiv.style.overflow = "hidden";
+        todoDiv.style.wordWrap = "break-word";
+    
+        todoDiv.innerHTML = `
+          <h3 style="text-decoration: ${todo.completed ? 'line-through' : 'none'};">${todo.title}</h3>
+          <p style="text-decoration: ${todo.completed ? 'line-through' : 'none'};">${todo.content}</p>
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+            <button onclick="editTodo(${index})" style="border-radius: 6px; background-color: mediumSeaGreen; height: 20px; width: 25%; font-size: 16px; font-weight: bold;">Edit</button>
+            <button onclick="completedTodo(${index})" style="border-radius: 6px; background-color: ${todo.completed ? "slategrey" : "dimgrey"}; height: 20px; width: 25%; font-size: 16px; font-weight: bold;">${todo.completed ? "Undo" : "Done"}</button>
+            <button onclick="deleteTodo(${index})" style="border-radius: 6px; background-color: tomato; height: 20px; width: 25%; font-size: 16px; font-weight: bold;">Delete</button>
+          </div>
+        `;
+    
+        todosContainer.appendChild(todoDiv);
+      });
+    }
+    
+    function saveTodo() {
+      const title = titleInput.value.trim();
+      const content = contentInput.value.trim();
+        
+      if (!title || !content) {
+        titleInput.value = "";
+        contentInput.value = "";
+        alert("Please fill in both fields.");
+        return;
+      }
+    
+      if (editIndex !== null) {
+        todos[editIndex] = { title, content };
+        editIndex = null;
+      } else {
+        todos.push({ title, content });
+      }
+    
+      localStorage.setItem("todos", JSON.stringify(todos));
+      titleInput.value = "";
+      contentInput.value = "";
+      cancel();
+      renderTodos();
+    }
+    
+    function completedTodo(index) {
+      todos[index].completed = !todos[index].completed;
+      localStorage.setItem("todos", JSON.stringify(todos));
+      renderTodos();
+    }
+    
+    function editTodo(index) {
+      const todo = todos[index];
+      titleInput.value = todo.title;
+      contentInput.value = todo.content;
+      editIndex = index;
+      addTodoItem();
+    }
+
+    function deleteTodo(index) {
+      if (confirm("Delete this todo?")) {
+        todos.splice(index, 1);
+        localStorage.setItem("todos", JSON.stringify(todos));
+        renderTodos();
+      }
+    }
+  
+    saveButton.addEventListener("click", saveTodo);
+    renderTodos();
+  </script>
+</body>
+
+</html>
