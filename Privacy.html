@@ -11,6 +11,12 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7164415393528115"
      crossorigin="anonymous"></script>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
       font-family: 'Comfortaa', sans-serif;
       background-color: #9DBACC;
@@ -18,18 +24,87 @@
       max-width: 800px;
       margin: auto;
     }
+
+    .navbar {
+      background-color: #37607CF2;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
     
-    h1 {
+    .navbar ul {
+      list-style-type: none;
+    }
+    
+    .navbar ul li {
+      display: inline;
+      margin: 0 1%;
+    }
+    
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: none;
+      background: transparent;
+    }
+    
+    .navbar ul li a:hover {
+      transition: 750ms;
+      color: slategrey;
+    }
+    
+    .webname {
+      color: white;
+      font-size: 16px;
+      letter-spacing: 2px;
+      background: transparent;
+      color: cornflowerblue;
+    }
+    
+    button {
+      border: transparent;
+    }
+    
+    .navbar ul li .home {
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      height: 20px;
+      width: 50px;
+      background-color: steelblue;
+      color: darkslategrey;
+      border-radius: 5px;
+      font-family: 'Comfortaa', sans-serif;
+    }
+    
+    .navbar ul li .home:hover {
+      transition: 750ms;
+      background-color: darkslategrey;
+      color: steelblue;
+    }
+    
+    .navbar ul li .home:active {
+      transition: 100ms;
+      background-color: steelblue;
+      color: darkslategrey;
+        }
+    
+    main h1 {
       text-align: center;
       color: #007BFF;
     }
     
-    a {
+    main a {
       color: white;
       text-decoration: none;
     }
     
-    a:hover {
+    main a:hover {
       text-decoration: underline;
       color: blue;
     }
@@ -41,7 +116,7 @@
       background-color: slategrey;
     }
     
-    strong {
+    main strong {
       font-family: 'Poppins', sans-serif;
     }
     
@@ -53,31 +128,35 @@
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
 
-  <p><strong>Last updated:</strong> May 4, 2025</p>
+  <main>
+    <h1>Privacy Policy</h1>
 
-  <p>Welcome to <strong>AgendaList</strong>. Your privacy is important to us. This Privacy Policy explains how we handle your information when you use our to-do list web app.</p>
+    <p><strong>Last updated:</strong> May 4, 2025</p>
+
+    <p>Welcome to <strong>AgendaList</strong>. Your privacy is important to us. This Privacy Policy explains how we handle your information when you use our to-do list web app.</p>
   
-  <div class="container">
-    <h2>1. Information We Collect</h2>
-    <p><strong>AgendaList</strong> does not collect any personal data from users. All your to-do items are stored locally in your browser's <code>localStorage</code>, and they are never transmitted to our servers or any third-party service.</p>
+    <div class="container">
+      <h2>1. Information We Collect</h2>
+      <p><strong>AgendaList</strong> does not collect any personal data from users. All your to-do items are stored locally in your browser's <code>localStorage</code>, and they are never transmitted to our servers or any third-party service.</p>
   
-    <h2>2. Use of Local Storage</h2>
-    <p>We use your browser’s local storage to save your tasks so you can return and manage them later. No data is shared or stored externally.</p>
+      <h2>2. Use of Local Storage</h2>
+      <p>We use your browser’s local storage to save your tasks so you can return and manage them later. No data is shared or stored externally.</p>
   
-    <h2>3. Cookies</h2>
-    <p>AgendaList does not use any cookies.</p>
+      <h2>3. Cookies</h2>
+      <p>AgendaList does not use any cookies.</p>
   
-    <h2>4. Third-Party Services</h2>
-    <p>AgendaList uses third-party services like Google AdSense to display advertisements. These services may use cookies or collect limited information to serve relevant ads. We recommend reviewing their respective privacy policies for more details.</p>
+      <h2>4. Third-Party Services</h2>
+      <p>AgendaList uses third-party services like Google AdSense to display advertisements. These services may use cookies or collect limited information to serve relevant ads. We recommend reviewing their respective privacy policies for more details.</p>
   
-    <h2>5. Your Control</h2>
-    <p>You can clear your tasks at any time by clearing your browser data or using the delete options in the app.</p>
+      <h2>5. Your Control</h2>
+      <p>You can clear your tasks at any time by clearing your browser data or using the delete options in the app.</p>
+ 
+      <h2>6. Contact</h2>
+      <p>If you have any questions about this Privacy Policy, feel free to contact us at: <a href="mailto:agendalist18@gmail.com">agendalist18@gmail.com</a></p>
+    </div>
+  </main>
   
-    <h2>6. Contact</h2>
-    <p>If you have any questions about this Privacy Policy, feel free to contact us at: <a href="mailto:agendalist18@gmail.com">samirneog10@gmail.com</a></p>
-  </div>
   <footer>
     &copy; 2025 AgendaList. All rights reserved.
   </footer>
